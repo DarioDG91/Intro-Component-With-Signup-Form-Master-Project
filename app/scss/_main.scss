@@ -1,0 +1,182 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  min-height: 100vh;
+  max-width: 20.45rem;
+
+  @include lg {
+    flex-direction: row;
+    max-width: 73.4rem;
+  }
+
+  .text {
+    color: white;
+    text-align: center;
+    margin: 5.75rem 0 3.9rem 0;
+
+    @include lg {
+      flex: 1;
+      text-align: left;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 27.5px;
+      margin: 0;
+      line-height: 1.3;
+
+      @include lg {
+        font-size: 49px;
+        line-height: 1.1;
+      }
+    }
+
+    p {
+      margin: 1.4rem 0 0 0;
+      line-height: 1.62;
+
+      @include lg {
+        margin: 1.8rem 0 0 0;
+        line-height: 1.6;
+      }
+    }
+  }
+
+  section {
+    @include lg {
+      flex: 1;
+      padding-right: 2rem;
+    }
+
+    .form-banner {
+      background-color: $Blue;
+      padding: 20px 50px 16px;
+      border-radius: 0.5rem;
+      box-shadow: 0 8px rgb(0 0 0 / 15%);
+      margin-bottom: 1.5rem;
+      p {
+        text-align: center;
+        color: white;
+        margin: 0;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 1.75;
+        letter-spacing: 0.2px;
+      }
+    }
+
+    .form {
+      background-color: white;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 8px rgb(0 0 0 / 15%);
+
+      @include lg {
+        padding: 2.5rem;
+      }
+
+      .form-control {
+        position: relative;
+        margin-bottom: 1rem;
+
+        @include lg {
+          margin-bottom: 20px;
+        }
+
+        input {
+          border-radius: 5px;
+          border: 1.3px solid hsl(246, 25%, 90%);
+          font-family: "Poppins", sans-serif;
+          font-size: 14px;
+          font-weight: 500;
+          padding: 17px 18px 15px;
+          display: block;
+          width: 100%;
+
+          &:focus {
+            border: 1.3px solid $Blue;
+            outline: none;
+          }
+
+          &::placeholder {
+            color: $DarkBlue;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+          }
+        }
+
+        img {
+          position: absolute;
+          top: 21%;
+          right: 6%;
+          opacity: 0;
+        }
+        small {
+          color: hsl(0, 100%, 74%);
+          font-weight: 600;
+          bottom: -24px;
+          right: 0;
+          opacity: 0;
+          text-align: right;
+        }
+      }
+
+      .form-control.error {
+        input {
+          color: $Red;
+          border-color: $Red;
+
+          &::placeholder {
+            color: $Red;
+          }
+        }
+
+        img {
+          opacity: 1;
+        }
+
+        small {
+          opacity: 1;
+          margin: 0.3rem 0 1rem 0;
+        }
+      }
+
+      button {
+        background-color: $Green;
+        color: white;
+        font-family: "Poppins", sans-serif;
+        border: 1px solid hsl(154, 59%, 45%);
+        text-transform: uppercase;
+        width: 100%;
+        border-radius: 0.5rem;
+        padding: 17px 22px 14px;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        margin-bottom: 0.7rem;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+
+      small {
+        display: block;
+        color: #bbb;
+        font-size: 11px;
+        font-weight: 500;
+        text-align: center;
+        margin: 0 1rem;
+        line-height: 1.8;
+
+        a {
+          color: hsl(0, 100%, 74%);
+          font-weight: 600;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
